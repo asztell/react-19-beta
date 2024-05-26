@@ -1,5 +1,10 @@
 class WebComponent extends HTMLElement {
   inner = this.attachShadow({ mode: 'closed' })
+
+  static get observedAttributes() {
+    return ['color']
+  }
+
   constructor() {
     super()
   }
@@ -9,8 +14,8 @@ class WebComponent extends HTMLElement {
     console.log('from setter: color = ', value)
   }
 
-  getColor() {
-    console.log('color', this.getAttribute('color'))
+  get color() {
+    return this.getAttribute('color')
   }
 
   connectedCallback() {
@@ -18,6 +23,17 @@ class WebComponent extends HTMLElement {
     this.inner.innerHTML = /* html */ `
       <input value="${color}" />
     `
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    console.log('attributeChangedCallback', name, oldValue, newValue)
+    if (oldValue === newValue) return
+    console.log('attributeChangedCallback', name, oldValue, newValue)
+    const element = this.inner.querySelector('input')
+    if (element) {
+      element.setAttribute(name, newValue)
+    }
+    // this.connectedCallback()
   }
 }
 

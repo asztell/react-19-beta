@@ -31,7 +31,7 @@ function App() {
     console.log('color_wc', color_wc)
     const inputs = document.getElementsByTagName('input')
     console.log('inputs', inputs)
-    if (inputs) {
+    if (inputs.length > 0) {
       const color_input = inputs[0].getAttribute('color')
       console.log('color_input', color_input)
     }
