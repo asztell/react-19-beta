@@ -1,5 +1,29 @@
 # React + TypeScript + Vite
 
+## Items
+
+### 1. custom elements and web components
+
+### 2. actions
+
+### 3. server components
+
+### 4. ref
+
+### 5. context
+
+### 6. doc metadata
+
+### 7. use
+
+### 8. style
+
+### 9. async scripts
+
+### 10. preloading resources
+
+### 11. error handling
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
