@@ -3,6 +3,16 @@ class WebComponent extends HTMLElement {
   constructor() {
     super()
   }
+
+  set color(value) {
+    this.setAttribute('color', value)
+    console.log('from setter: color = ', value)
+  }
+
+  getColor() {
+    console.log('color', this.getAttribute('color'))
+  }
+
   connectedCallback() {
     const color = this.getAttribute('color') || 'black'
     this.inner.innerHTML = /* html */ `
